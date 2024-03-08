@@ -107,7 +107,8 @@ dependencies {
 //    implementation("com.google.dagger:hilt-android:2.44")
 //    kapt("com.google.dagger:hilt-android-compiler:2.44")
 
-//    implementation("com.android.support:palette-v7:28.0.0")
+
+    implementation("androidx.palette:palette-ktx:1.0.0")
 }
 
 // Allow references to generated code
