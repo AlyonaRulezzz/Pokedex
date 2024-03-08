@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    kotlin("kapt")
+//    id("kotlin-kapt")
 //    id("com.google.dagger.hilt.android")
 }
 
@@ -103,5 +104,13 @@ dependencies {
     implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
+//    implementation("com.google.dagger:hilt-android:2.44")
+//    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
 //    implementation("com.android.support:palette-v7:28.0.0")
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
