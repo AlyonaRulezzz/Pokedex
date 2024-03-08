@@ -25,6 +25,7 @@ import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.p.R
@@ -47,6 +48,7 @@ fun PokemonListScreen(
                     .fillMaxWidth()
                     .align(CenterHorizontally)
             )
+            Spacer(modifier = Modifier.height(20.dp))
             SearchBar(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -89,7 +91,7 @@ fun SearchBar(
                 .padding(horizontal = 20.dp, vertical = 12.dp)
                 .onFocusChanged {
 //                    isHintDisplayed = it != FocusState.Active
-                    isHintDisplayed = it.isFocused  //??????????
+//                    isHintDisplayed = it.isFocused  //??????????
                 }
         )
         if (isHintDisplayed) {
