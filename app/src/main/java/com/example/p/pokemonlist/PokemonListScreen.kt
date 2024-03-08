@@ -29,7 +29,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.p.R
+import com.example.p.data.models.PokedexListEntry
 import com.google.android.material.search.SearchBar
+
+import androidx.hilt.navigation.compose.hiltNavGraphViewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun PokemonListScreen(
@@ -103,4 +107,15 @@ fun SearchBar(
                 )
         }
     }
+}
+
+@Composable
+fun PokedexEntry(
+    entry: PokedexListEntry,
+    navController: NavController,
+    modifier: Modifier = Modifier,
+//    viewModel: PokemonListViewModel = hiltNavGraphViewModel()  // deprecated (replaced by hiltViewModel)
+    viewModel: PokemonListViewModel = hiltViewModel()
+    ) {
+
 }
