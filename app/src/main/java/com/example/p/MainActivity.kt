@@ -8,11 +8,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navArgument
+//import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.p.pokemonlist.PokemonListScreen
 import com.example.p.ui.theme.PTheme
 import dagger.hilt.android.AndroidEntryPoint
+
+import androidx.compose.runtime.Composable
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

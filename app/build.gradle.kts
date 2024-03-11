@@ -1,10 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
     id("kotlin-kapt")
-//    id("com.google.dagger.hilt.android")
-//    id ("dagger.hilt.android.plugin")
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -44,7 +42,6 @@ android {
         compose = true
     }
     composeOptions {
-//        kotlinCompilerExtensionVersion = "1.4.3"
         kotlinCompilerExtensionVersion = "1.5.10"
     }
     packaging {
@@ -95,21 +92,21 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
     // Coil
-    implementation("io.coil-kt:coil:1.1.1")
-    implementation("com.google.accompanist:accompanist-coil:0.7.0")
+    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("com.google.accompanist:accompanist-coil:0.15.0")
 
-    //Dagger - Hilt
-    implementation("androidx.hilt:hilt-work:1.2.0")
+/////////////
     // When using Kotlin.
     kapt("androidx.hilt:hilt-compiler:1.2.0")
-    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-//    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0-alpha03")
+    //  we need to DELETE this dependency if we use implementation("com.google.dagger:hilt-android:MORE THEN 2.35")
+//    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
-//    implementation("com.google.dagger:hilt-android:2.44")
-//    kapt("com.google.dagger:hilt-android-compiler:2.44")
-
-//    implementation("com.google.dagger:hilt-android-gradle-plugin:2.51")
+    implementation("com.google.dagger:hilt-android:2.49")
+    kapt("com.google.dagger:hilt-android-compiler:2.49")
+//    implementation("com.google.dagger:hilt-android:2.33-beta")
+//    kapt("com.google.dagger:hilt-android-compiler:2.33-beta")
+////////////
 
     implementation("androidx.palette:palette-ktx:1.0.0")
 }
@@ -117,4 +114,5 @@ dependencies {
 // Allow references to generated code
 kapt {
     correctErrorTypes = true
+    useBuildCache = false
 }
