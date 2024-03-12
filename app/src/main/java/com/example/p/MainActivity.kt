@@ -16,6 +16,8 @@ import com.example.p.ui.theme.PTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 import androidx.compose.runtime.Composable
+import com.example.p.pokemondetail.PokemonDetailScreen
+import java.util.Locale
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -46,7 +48,11 @@ class MainActivity : ComponentActivity() {
                         val pokemonName = remember {
                             it.arguments?.getString("pokemonName")
                         }
-
+                        PokemonDetailScreen(
+                            dominantColor = dominantColor,
+                            pokemonName = pokemonName?.lowercase(Locale.ROOT) ?: "",
+                            navController = navController
+                        )
                     }
                 }
             }
